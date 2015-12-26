@@ -13,15 +13,15 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html'); //send a file
 });
 
-app.put('/OnRed', function(req, res) {
+app.post('/OnRed', function(req, res) {
 	gpio.open(12, "output", function(err) {
 		console.log('GPIO pin 12 is open');
-  			gpio.write(12, 1, function() { // toggle pin between high (1) and low (0)
-  		});
+	  	gpio.write(12, 1, function() { // toggle pin between high (1) and low (0)
+	  	});
 	});
 });
 
-app.put('/OffRed', function(req, res) {
+app.post('/OffRed', function(req, res) {
 	console.log('GPIO pin 12 is off');
 	gpio.write(12, 0, function() { // turn off Pin
 	});
@@ -29,7 +29,7 @@ app.put('/OffRed', function(req, res) {
 	});
 });
 
-app.put('/OnYellow', function(req, res) {
+app.post('/OnYellow', function(req, res) {
 	gpio.open(7, "output", function(err) {
 		console.log('GPIO pin 7 is open');
   			gpio.write(7, 1, function() { // toggle pin between high (1) and low (0)
@@ -37,7 +37,7 @@ app.put('/OnYellow', function(req, res) {
 	});
 });
 
-app.put('/OffYellow', function(req, res) {
+app.post('/OffYellow', function(req, res) {
 	console.log('GPIO pin 7 is off');
 	gpio.write(7, 0, function() { // turn off Pin
 	});
