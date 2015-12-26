@@ -13,6 +13,10 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html'); //send a file
 });
 
+gpio.close(12, function(err){});
+gpio.close(7, function(err){});
+
+
 app.post('/OnRed', function(req, res) {
 	gpio.open(12, "output", function(err) {
 		console.log('GPIO pin 12 is open');
