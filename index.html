@@ -28,37 +28,39 @@
   </head>
   <body>
     <h1>LED Toggle Site</h1>
-    <div class="red"></div>
-    <div class="yellow"></div>
+    <div class="red" id="twelve"></div>
+    <div class="yellow" id="seven"></div>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-      var switchtoggle = gpio();
-      var toggle1 = 0;
-      var toggle2 = 0;
+      $(document).ready(function() {
+        var switchtoggle = gpio();
+        var toggle1 = 0;
+        var toggle2 = 0;
       
-      $('red').click(function(){
-        toggle1 = toggle1 + 1;
-        console.log('Red ' + toggle1);
-        var Pin = 12;
-        if (toggle1%2 === 0) {
-        //  switchtoggle.open();
-          $('red').addClass('.black');
-        } else {
-        //  switchtoggle.close();
-          $('red').removeClass('black');
-        }
-      });
-      $('yellow').click(function(){
-        toggle2 = toggle2 + 1;
-        console.log('Yellow ' + toggle2);
-        var Pin = 7;
-        if (toggle2%2 === 0) {
-        //  switchtoggle.open();
-          $('yellow').addClass('.black');
-        } else {
-        //  switchtoggle.close();
-          $('yellow').removeClass('black');
-        }
+        $('#twelve').click(function(){
+          toggle1 = toggle1 + 1;
+          console.log('Red ' + toggle1);
+          var Pin = 12;
+          if (toggle1%2 === 0) {
+          //  switchtoggle.open();
+            $('#twelve').addClass('.black');
+          } else {
+          //  switchtoggle.close();
+            $('#twelve').removeClass('.black');
+          }
+        });
+        $('#seven').click(function(){
+          toggle2 = toggle2 + 1;
+          console.log('Yellow ' + toggle2);
+          var Pin = 7;
+          if (toggle2%2 === 0) {
+          //  switchtoggle.open();
+            $('#seven').addClass('.black');
+          } else {
+          //  switchtoggle.close();
+            $('#seven').removeClass('.black');
+          }
+        });
       });
     </script> 
   </body>
