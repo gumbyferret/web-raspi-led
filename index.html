@@ -36,28 +36,28 @@
       var toggle1 = 0;
       var toggle2 = 0;
       
-      $('.red').click(function(){
+      $('red').click(function(){
         toggle1 = toggle1 + 1;
         console.log('Red ' + toggle1);
         var Pin = 12;
         if (toggle1%2 === 0) {
         //  switchtoggle.open();
-          $('.red').addClass('.black');
+          $('red').addClass('.black');
         } else {
         //  switchtoggle.close();
-          $('.red').removeClass('black');
+          $('red').removeClass('black');
         }
       });
-      $('.yellow').click(function(){
+      $('yellow').click(function(){
         toggle2 = toggle2 + 1;
         console.log('Yellow ' + toggle2);
         var Pin = 7;
         if (toggle2%2 === 0) {
         //  switchtoggle.open();
-          $('.yellow').addClass('.black');
+          $('yellow').addClass('.black');
         } else {
         //  switchtoggle.close();
-          $('.yellow').removeClass('black');
+          $('yellow').removeClass('black');
         }
       });
     </script> 
