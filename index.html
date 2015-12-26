@@ -22,21 +22,24 @@
     <div class="black" id="twelve"></div>
     <div class="black" id="seven"></div>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="index.js"></script>
     <script>
-        var switchtoggle = gpio();
         var toggle1 = 0;
         var toggle2 = 0;
       
         $('#twelve').click(function(){
           toggle1 = toggle1 + 1;
           console.log('Red ' + toggle1);
-          var Pin = 12;
           if (toggle1%2 === 1) {
-            switchtoggle.open(Pin);
+            $.ajax({
+              type: 'POST',
+              url: 'http://192.168.1.101:3000/OnRed'
+            });
             $('#twelve').addClass('red');
           } else {
-            switchtoggle.close(Pin);
+            $.ajax({
+              type: 'POST',
+              url: 'http://192.168.1.101:3000/OffRed'
+            });
             $('#twelve').removeClass('red');
           }
         });
@@ -45,10 +48,16 @@
           console.log('Yellow ' + toggle2);
           var Pin = 7;
           if (toggle2%2 === 1) {
-            switchtoggle.open(Pin);
+            $.ajax({
+              type: 'POST',
+              url: 'http://192.168.1.101:3000/OnYellow'
+            });
             $('#seven').addClass('yellow');
           } else {
-            switchtoggle.close(Pin);
+            $.ajax({
+              type: 'POST',
+              url: 'http://192.168.1.101:3000/OffYellow'
+            });
             $('#seven').removeClass('yellow');
           }
         });
