@@ -19,11 +19,15 @@ app.post('/OnRed', function(req, res) {
 	  	gpio.write(12, 1, function() { // toggle pin between high (1) and low (0)
 	  	});
 	});
+	gpio.close(12, function(err) {
+	});
 });
 
 app.post('/OffRed', function(req, res) {
-	console.log('GPIO pin 12 is off');
-	gpio.write(12, 0, function() { // turn off Pin
+	gpio.open(12, "output", function(err) {
+		console.log('GPIO pin 12 is off');
+		gpio.write(12, 0, function() { // turn off Pin
+		});
 	});
 	gpio.close(12, function(err) {
 	});
@@ -35,11 +39,15 @@ app.post('/OnYellow', function(req, res) {
   			gpio.write(7, 1, function() { // toggle pin between high (1) and low (0)
   		});
 	});
+	gpio.close(7, function(err) {
+	});
 });
 
 app.post('/OffYellow', function(req, res) {
-	console.log('GPIO pin 7 is off');
-	gpio.write(7, 0, function() { // turn off Pin
+	gpio.open(7, "output", function(err) {
+		console.log('GPIO pin 7 is off');
+		gpio.write(7, 0, function() { // turn off Pin
+		});
 	});
 	gpio.close(7, function(err) {
 	});
