@@ -1,0 +1,6 @@
+{
+  "name": "LED Toggle",
+  "version": "0.0.1",
+  "description": "Node and Express app for toggling LED",
+  "dependencies": {}
+}
