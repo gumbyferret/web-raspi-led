@@ -24,7 +24,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       $(document).ready(function() {
-        // var switchtoggle = gpio();
+        var switchtoggle = gpio();
         var toggle1 = 0;
         var toggle2 = 0;
       
@@ -33,10 +33,10 @@
           console.log('Red ' + toggle1);
           var Pin = 12;
           if (toggle1%2 === 1) {
-          //  switchtoggle.open();
+            switchtoggle.open();
             $('#twelve').addClass('red');
           } else {
-          //  switchtoggle.close();
+            switchtoggle.close();
             $('#twelve').removeClass('red');
           }
         });
@@ -45,10 +45,10 @@
           console.log('Yellow ' + toggle2);
           var Pin = 7;
           if (toggle2%2 === 1) {
-          //  switchtoggle.open();
+            switchtoggle.open();
             $('#seven').addClass('yellow');
           } else {
-          //  switchtoggle.close();
+            switchtoggle.close();
             $('#seven').removeClass('yellow');
           }
         });
