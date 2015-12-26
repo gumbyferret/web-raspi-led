@@ -6,7 +6,7 @@ var gpio = require("pi-gpio");
 //var durationId;
 //var Pin1 = 7;
 //var Pin2 = 12;
-//var Pin = 7;
+var Pin = 7;
 
 app.get('/', function(req, res) {
   //res.send('<h1>Hello World</h1>');  //send Hello World
