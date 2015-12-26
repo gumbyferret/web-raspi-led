@@ -4,36 +4,27 @@
     <title>LED select web site</title>
     <style>
       .red {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
         background: red;
-        border: 3px solid blue;
       }
       .yellow {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
         background: yellow;
-        border: 3px solid blue;
       }
       .black {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: black;
         border: 3px solid blue;
       }
     </style>
   </head>
   <body>
     <h1>LED Toggle Site</h1>
-    <div class="red" id="twelve"></div>
-    <div class="yellow" id="seven"></div>
+    <div class="black" id="twelve"></div>
+    <div class="black" id="seven"></div>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       $(document).ready(function() {
-        var switchtoggle = gpio();
+        // var switchtoggle = gpio();
         var toggle1 = 0;
         var toggle2 = 0;
       
@@ -43,10 +34,10 @@
           var Pin = 12;
           if (toggle1%2 === 0) {
           //  switchtoggle.open();
-            $('#twelve').addClass('.black');
+            $('#twelve').addClass('.red');
           } else {
           //  switchtoggle.close();
-            $('#twelve').removeClass('.black');
+            $('#twelve').removeClass('.red');
           }
         });
         $('#seven').click(function(){
@@ -55,10 +46,10 @@
           var Pin = 7;
           if (toggle2%2 === 0) {
           //  switchtoggle.open();
-            $('#seven').addClass('.black');
+            $('#seven').addClass('.yellow');
           } else {
           //  switchtoggle.close();
-            $('#seven').removeClass('.black');
+            $('#seven').removeClass('.yellow');
           }
         });
       });
