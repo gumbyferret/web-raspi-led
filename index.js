@@ -19,10 +19,9 @@ gpio.open(Pin, "output", function(err) {
   	});
 });
 
-gpio.closed(Pin, function(err) {
+gpio.close(Pin, function(err) {
 	console.log('GPIO pin '+Pin+' is off');
   	gpio.write(Pin, 0, function() { // turn off Pin
-    		gpio.close(Pin); // then Close Pin
   	});
 });
 
