@@ -19,11 +19,11 @@ gpio.open(Pin, "output", function(err) {
   	});
 });
 
-gpio.close(Pin, "output", function(err) {
+gpio.closed(Pin, function(err) {
 	console.log('GPIO pin '+Pin+' is off');
-  gpio.write(Pin, 0, function() { // turn off Pin
-    gpio.close(Pin); // then Close Pin
-  });
+  	gpio.write(Pin, 0, function() { // turn off Pin
+    		gpio.close(Pin); // then Close Pin
+  	});
 });
 
 http.listen(3000, function(){
