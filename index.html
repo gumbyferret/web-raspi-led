@@ -33,10 +33,10 @@
           console.log('Red ' + toggle1);
           var Pin = 12;
           if (toggle1%2 === 1) {
-            switchtoggle.open();
+            switchtoggle.open(Pin);
             $('#twelve').addClass('red');
           } else {
-            switchtoggle.close();
+            switchtoggle.close(Pin);
             $('#twelve').removeClass('red');
           }
         });
@@ -45,10 +45,10 @@
           console.log('Yellow ' + toggle2);
           var Pin = 7;
           if (toggle2%2 === 1) {
-            switchtoggle.open();
+            switchtoggle.open(Pin);
             $('#seven').addClass('yellow');
           } else {
-            switchtoggle.close();
+            switchtoggle.close(Pin);
             $('#seven').removeClass('yellow');
           }
         });
